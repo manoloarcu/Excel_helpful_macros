@@ -13,7 +13,7 @@ Dim x As Long
 'to use the macro, simply select the cells with number values you want to change to text, then run the macro.
 
 'CopyRight Manolo Ariza. manolo.ar.cu@gmail.com
-'licence LGPLv3
+'licence GPLv2
 
 x = 1
 Set rng = Selection
