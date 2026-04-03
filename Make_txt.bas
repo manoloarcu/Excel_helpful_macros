@@ -1,4 +1,3 @@
-Attribute VB_Name = "Module1"
 Sub make_text()
 
 Dim rng As Range
@@ -15,6 +14,10 @@ Dim x As Long
 'CopyRight Manolo Ariza. manolo.ar.cu@gmail.com
 'licence GPLv2
 
+Application.ScreenUpdating = False
+Application.Calculation = xlCalculationManual
+
+
 x = 1
 Set rng = Selection
 rng.NumberFormat = "@" 'format as text the cell
@@ -22,13 +25,22 @@ rng.NumberFormat = "@" 'format as text the cell
 
         Do While x <= rng.Cells.Count 'loop throu all the cells
         
+        If IsEmpty(rng.Cells(x).Value) Then
+        
+        Else
+        
         txt = rng.Cells(x).Value2 'copy the value of the cell to a dummy variable
         rng(x).Value2 = txt 'rewrite the value of the cell as text
+        
+        End If
+        
         x = x + 1
         
         Loop
-
-
+        
+        
+Application.ScreenUpdating = True
+Application.Calculation = xlCalculationAutomatic
 
 
 End Sub
